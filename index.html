@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Emoji Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {
+        margin-top: 50px;
+      }
+      
+      p {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #0056b3;
+      }
+      
+      #emojiContainer {
+        font-size: 80px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Emoji Generator</h1>
+    <p>Click the button below to generate a random sequence of emojis:</p>
+    <button onclick="generateEmojis()">Generate</button>
+    <div id="emojiContainer"></div>
+    <script>
+      function generateEmojis() {
+        // Define an array of all possible emojis
+        const emojis = ["✌","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚"];
+
+        // Generate a random sequence of 10 emojis
+        let sequence = '';
+        for (let i = 0; i < 10; i++) {
+          let randomIndex = Math.floor(Math.random() * emojis.length);
+          sequence += emojis[randomIndex];
+        }
+        
+        // Display the sequence of emojis on the page
+        document.getElementById('emojiContainer').innerHTML = sequence;
+      }
+    </script>
+  </body>
+</html>
